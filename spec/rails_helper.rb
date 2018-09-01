@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'mongoid-rspec'
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
@@ -20,4 +21,6 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.include Mongoid::Matchers, type: :model
 end
