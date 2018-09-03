@@ -14,7 +14,7 @@
     },
     "hours_spent": 2.5,
     "category": "shopping",
-    "location": "outdoors",
+    "location": "indoor",
     "district": "Centro",
     "latlng": [
       40.4087357,
@@ -49,7 +49,7 @@
     "hours_spent": 1.5,
     "category": "cultural",
     "location": "outdoors",
-    "district": "Centro",
+    "district": "Chamberí",
     "latlng": [
       40.4173423,
       -3.7144063
