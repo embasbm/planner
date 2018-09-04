@@ -13,14 +13,4 @@ embasbm@gmail.com
 
 ## TODOs
 
- - Make scopes:
-    -- convert all
-```ruby
-filtered = filtered.select { |x| x.category.downcase.match(category.downcase) } if category.present?
-
-filtered = filtered.select { |x| x.location.downcase.match(location.downcase) } if location.present?
-
-filtered = filtered.select { |x| x.district.downcase.match(district.downcase) } if district.present?```
-
-
-in `City.scopes`
+~~- Make scopes for ```City Class```~~
