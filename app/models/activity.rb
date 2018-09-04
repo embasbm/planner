@@ -10,4 +10,8 @@ class Activity
   embeds_one :position
 
   embedded_in :city
+
+  scope :by_category, lambda { |category_filter| where(category: /.*#{category_filter}*./) }
+  scope :by_location, lambda { |location_filter| where(location: /.*#{location_filter}*./) }
+  scope :by_district, lambda { |district_filter| where(district: /.*#{district_filter}.*/) }
 end

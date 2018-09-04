@@ -43,11 +43,11 @@ class City
   end
 
   private
-    def filter_result_by(category, location, district)
+    def filter_result_by(options)
       filtered = activities
-      filtered = filtered.select { |x| x.category.downcase.match(category.downcase) } if category.present?
-      filtered = filtered.select { |x| x.location.downcase.match(location.downcase) } if location.present?
-      filtered = filtered.select { |x| x.district.downcase.match(district.downcase) } if district.present?
+      filtered = filtered.by_category(options[:category]) if options[:category].present?
+      filtered = filtered.by_location(options[:location]) if options[:location].present?
+      filtered = filtered.by_district(options[:district]) if options[:district].present?
       filtered
     end
 
