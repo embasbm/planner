@@ -18,6 +18,12 @@ class V1::CitiesController < ApplicationController
     render json: @activities
   end
 
+  def recommend
+    @city = City.find_by(name: params[:name])
+    @activities = @city.recommend_activities({ range: params[:range], category: params[:category] })
+    render json: @activities
+  end
+
   private
     def city_params
       params[:city] = {}
