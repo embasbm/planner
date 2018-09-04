@@ -14,7 +14,7 @@ class V1::CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
-    @activities = @city.fetch_activities(params[:category], params[:location], params[:district])
+    @activities = @city.fetch_activities({category: params[:category], location: params[:location], district: params[:district]})
     render json: @activities
   end
 
