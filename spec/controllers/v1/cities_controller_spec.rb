@@ -12,7 +12,7 @@ describe V1::CitiesController do
     end
   end
 
-  describe "POST #show" do
+  describe "GET #show" do
     let(:city) { create(:city) }
     it "retrieves all available activities in city" do
       get :show, params: { id: city }
