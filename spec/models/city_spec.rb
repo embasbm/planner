@@ -43,4 +43,34 @@ RSpec.describe City, type: :model do
       end
     end
   end
+
+  describe '#recommend_activities' do
+    let!(:city) { create(:city) }
+
+    describe 'receive a time range' do
+      it 'reaturn only activities for that time range' do
+        expect(city.recommend_activities({ range: '10:00-12:00' }).count).to eq 1
+        expect(city.recommend_activities({ range: '10:00-12:00' })[0][:properties][:name]).to eq 'El Rastro'
+        expect(city.recommend_activities({ range: '17:00-18:00' }).count).to eq 1
+        expect(city.recommend_activities({ range: '17:00-18:00' })[0][:properties][:name]).to eq 'Palacio Real'
+      end
+    end
+
+    describe 'receive category' do
+      it 'reaturn only activities for that category' do
+        expect(city.recommend_activities({ category: 'cultural' }).count).to eq 1
+        expect(city.recommend_activities({ category: 'cultural' })[0][:properties][:name]).to eq 'Palacio Real'
+
+        expect(city.recommend_activities({ category: 'shopping' }).count).to eq 1
+        expect(city.recommend_activities({ category: 'shopping' })[0][:properties][:name]).to eq 'El Rastro'
+      end
+    end
+
+    describe 'receive time range and category' do
+      it 'reaturn only common activities' do
+        expect(city.recommend_activities({ range: '10:00-12:00', category: 'cultural' }).count).to eq 0
+        expect(city.recommend_activities({ range: '10:00-12:00', category: 'shopping' }).count).to eq 1
+      end
+    end
+  end
 end
