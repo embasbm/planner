@@ -4,8 +4,9 @@ class City
 
   embeds_many :activities
 
-  def fetch_activities(category = nil, location = nil, district = nil)
-    data_structure = filter_result_by(category, location, district )
+  def fetch_activities(options = [])
+    return activities if options.blank?
+    data_structure = filter_result_by(options)
     result = []
     data_structure.each do |activity|
       point = {
