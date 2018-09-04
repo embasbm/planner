@@ -5,6 +5,17 @@ FactoryBot.define do
     category { 'Bar' }
     location { 'Baz' }
     district { 'Xyz' }
-    opening_days { [ FactoryBot.build(:opening_day), FactoryBot.build(:opening_day )] }
+
+    trait :all_day do
+      opening_days {[FactoryBot.build(:opening_day, :all_day)]}
+    end
+
+    trait :morning do
+      opening_days {[FactoryBot.build(:opening_day, :morning)]}
+    end
+
+    trait :afternoon do
+      opening_days {[FactoryBot.build(:opening_day, :afternoon)]}
+    end
   end
 end

@@ -3,20 +3,8 @@ FactoryBot.define do
     name { 'Foo' }
     activities {
       [
-        {
-          "name": "El Rastro",
-          "hours_spent": 2.5,
-          "category": "shopping",
-          "location": "indoor",
-          "district": "Centro"
-        },
-        {
-          "name": "Palacio Real",
-          "hours_spent": 1.5,
-          "category": "cultural",
-          "location": "outdoors",
-          "district": "Chamberí"
-        }
+        FactoryBot.build(:activity, :morning, name: 'El Rastro', category: 'shopping', location: 'indoor', district: 'Centro'),
+        FactoryBot.build(:activity, :afternoon, name: 'Palacio Real', category: 'cultural', location: 'outdoors', district: 'Chamberi')
       ]
     }
   end
