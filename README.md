@@ -4,28 +4,18 @@ The goal of this project is to write a web API to help select activities to do i
 
 ## Test
 
-<<<<<<< HEAD
-After a file is posted, a city with that namefile is creAted. I'm not sure when/how to start with reading/parsing the file and create the nested records: should it be a Service, or just use a private method in Cities_controller?
+    ```ruby
+        git clone https://github.com/embasbm/planner
 
-Decided to go for Service, since reading the file is kind of out of the City scaffold scope.
+        cd planner
 
-## REFERENCE
-embasbm@gmail.com
+        rspec
+    ```
+## Live demo
 
 ## TODOs
 
-~~- Make scopes for ```City Class```~~
-=======
-```ruby
-    git clone https://github.com/embasbm/planner
-
-    cd planner
-
-    rspec
-```
-
-## Live demo
+    ~~- Make scopes for ```City Class```~~
 
 ## Reference
 embasbm@gmail.com
->>>>>>> develop
