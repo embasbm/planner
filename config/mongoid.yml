@@ -19,7 +19,7 @@ test:
 production:
   clients:
     default:
-     uri: mongodb://username:password@host1:port1,host2:port2/database?replicaSet=<replicaSetName>
-
-     options:
-       connect_timeout: 15
+      uri: <%= ENV['MONGOHQ_URL'] %>
+    options:
+      skip_version_check: true
+    safe: true
