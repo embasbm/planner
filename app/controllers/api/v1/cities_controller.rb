@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class V1::CitiesController < ApplicationController
+class Api::V1::CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
     if @city.save
-      V1::CityService.create_city_content(@city, params[:upload])
+      CityService.create_city_content(@city, params[:upload])
       render json: @city, status: :created
     else
       render json: @city.errors, status: :unprocessable_entity

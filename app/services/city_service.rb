@@ -1,4 +1,4 @@
-module V1::CityService
+module CityService
   class << self
     def create_city_content(city, file)
       content_file = JSON.parse(file.read)
