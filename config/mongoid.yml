@@ -20,6 +20,3 @@ production:
   clients:
     default:
       uri: <%= ENV['MONGODB_URI'] %>
-    options:
-      connect_timeout: 15
-      database: planner_prod
