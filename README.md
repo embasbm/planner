@@ -15,7 +15,7 @@ The goal of this project is to write a web API to help select activities to do i
 
 ## TODOs
 
-    ~~- Make scopes for ```City Class```~~
+~~- Make scopes for ```City Class```~~
 
 ## Reference
 embasbm@gmail.com
