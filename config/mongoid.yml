@@ -19,7 +19,6 @@ test:
 production:
   clients:
     default:
-      database: planner_test
       uri: <%= ENV['MONGODB_URI'] %>
     options:
       connect_timeout: 15
